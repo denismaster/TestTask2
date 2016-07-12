@@ -3,33 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TestTask2.Models
+namespace TestTask.Models
 {
     ///
     /// <summary>
     /// Атрибут, которым помечаются изменения исходного кода.
     /// </summary>
     ///
-    //Возможность использования нескольких атрибутов сразу
-    [System.AttributeUsage(System.AttributeTargets.Class |
-                       System.AttributeTargets.Struct,
-                       AllowMultiple = true) ]
-    public class AuthorChangeAttribute
+    //Возможность использования нескольких атрибутов сразу, но без наследования производными классами.
+    [AttributeUsage(AttributeTargets.Class |
+                       AttributeTargets.Struct | 
+                       AttributeTargets.Method |
+                       AttributeTargets.Interface,
+                       AllowMultiple = true, Inherited=false) ]
+    public class AuthorChangeAttribute: System.Attribute
     {
         private String authorName;
         private DateTime date;
         private String description;
 
-        public AuthorChangeAttribute(String authorName, DateTime date, String description=null)
+        public AuthorChangeAttribute(String authorName, String date, String description=null)
         {
             if(String.IsNullOrEmpty(authorName))
                 throw new ArgumentException("Author name is invalid or null");
-
             this.authorName = authorName;
-            this.date = date;
+            //TODO: проверка даты на корректность
+            this.date = DateTime.Parse(date);
             this.description = description;
         }
-
         public String AuthorName
         {
             get 
@@ -37,7 +38,6 @@ namespace TestTask2.Models
                 return authorName;
             }
         }
-
         public String Description
         {
             get
@@ -45,7 +45,6 @@ namespace TestTask2.Models
                 return description;
             }
         }
-
         public DateTime Date
         {
             get

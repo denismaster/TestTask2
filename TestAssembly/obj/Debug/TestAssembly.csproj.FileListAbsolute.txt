@@ -1,0 +1,7 @@
+D:\Repositories\TestTask2\TestAssembly\obj\Debug\TestAssembly.csprojResolveAssemblyReference.cache
+D:\Repositories\TestTask2\TestAssembly\bin\Debug\TestAssembly.dll
+D:\Repositories\TestTask2\TestAssembly\bin\Debug\TestAssembly.pdb
+D:\Repositories\TestTask2\TestAssembly\bin\Debug\TestTask2.Models.dll
+D:\Repositories\TestTask2\TestAssembly\bin\Debug\TestTask2.Models.pdb
+D:\Repositories\TestTask2\TestAssembly\obj\Debug\TestAssembly.dll
+D:\Repositories\TestTask2\TestAssembly\obj\Debug\TestAssembly.pdb
