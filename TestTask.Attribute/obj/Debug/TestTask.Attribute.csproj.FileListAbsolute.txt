@@ -1,0 +1,5 @@
+D:\Repositories\TestTask2\TestTask.Attribute\bin\Debug\TestTask.Attribute.dll
+D:\Repositories\TestTask2\TestTask.Attribute\bin\Debug\TestTask.Attribute.pdb
+D:\Repositories\TestTask2\TestTask.Attribute\obj\Debug\TestTask.Attribute.csprojResolveAssemblyReference.cache
+D:\Repositories\TestTask2\TestTask.Attribute\obj\Debug\TestTask.Attribute.dll
+D:\Repositories\TestTask2\TestTask.Attribute\obj\Debug\TestTask.Attribute.pdb

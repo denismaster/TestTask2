@@ -1,0 +1,14 @@
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\TestTask.DataAccess.dll.config
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\TestTask.DataAccess.dll
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\TestTask.DataAccess.pdb
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\EntityFramework.dll
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\TestTask2.Models.dll
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\TestTask2.Models.pdb
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\EntityFramework.xml
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\Repositories\TestTask2\TestTask.DataAccess\obj\Debug\TestTask.DataAccess.csprojResolveAssemblyReference.cache
+D:\Repositories\TestTask2\TestTask.DataAccess\obj\Debug\TestTask.DataAccess.dll
+D:\Repositories\TestTask2\TestTask.DataAccess\obj\Debug\TestTask.DataAccess.pdb
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\TestTask.Attribute.dll
+D:\Repositories\TestTask2\TestTask.DataAccess\bin\Debug\TestTask.Attribute.pdb

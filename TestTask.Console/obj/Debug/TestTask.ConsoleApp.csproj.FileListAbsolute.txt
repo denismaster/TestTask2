@@ -1,7 +1,0 @@
-D:\Repositories\TestTask2\TestTask.Console\bin\Debug\TestTask.Console.exe
-D:\Repositories\TestTask2\TestTask.Console\bin\Debug\TestTask.Console.pdb
-D:\Repositories\TestTask2\TestTask.Console\bin\Debug\TestTask2.Models.dll
-D:\Repositories\TestTask2\TestTask.Console\bin\Debug\TestTask2.Models.pdb
-D:\Repositories\TestTask2\TestTask.Console\obj\Debug\TestTask.ConsoleApp.csprojResolveAssemblyReference.cache
-D:\Repositories\TestTask2\TestTask.Console\obj\Debug\TestTask.Console.exe
-D:\Repositories\TestTask2\TestTask.Console\obj\Debug\TestTask.Console.pdb

@@ -21,13 +21,13 @@ namespace TestAssembly
         }
     }
 
-    [AuthorChange("Denis Ivanov", "2016/01/03")]
+    [AuthorChange("Denis Denisov", "2016/01/03")]
     [Serializable]
     public class B:A
     {
 
     }
-    [AuthorChange("Denis Ivanov", "2016/01/12")]
+    [AuthorChange("Denis Denisov", "2016/01/12")]
     public class C:A
     {
 

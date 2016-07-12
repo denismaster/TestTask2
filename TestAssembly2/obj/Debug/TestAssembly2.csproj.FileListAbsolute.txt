@@ -1,0 +1,7 @@
+D:\Repositories\TestTask2\TestAssembly2\bin\Debug\TestAssembly2.dll
+D:\Repositories\TestTask2\TestAssembly2\bin\Debug\TestAssembly2.pdb
+D:\Repositories\TestTask2\TestAssembly2\obj\Debug\TestAssembly2.csprojResolveAssemblyReference.cache
+D:\Repositories\TestTask2\TestAssembly2\obj\Debug\TestAssembly2.dll
+D:\Repositories\TestTask2\TestAssembly2\obj\Debug\TestAssembly2.pdb
+D:\Repositories\TestTask2\TestAssembly2\bin\Debug\TestTask.Attribute.dll
+D:\Repositories\TestTask2\TestAssembly2\bin\Debug\TestTask.Attribute.pdb
