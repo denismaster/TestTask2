@@ -24,29 +24,47 @@ namespace TestTask.App
 
         public MainWindow()
         {
+            //теоретически можно добавить контейнер внедрения зависимостей, но дабы не стрелять из пушки по мухе, сделал проще.
             authorChangeService = new AuthorChangeService(new TestTask.DataAccess.AuthorChangeRepository());
             InitializeComponent();
-        }
 
-        private void buttonLoad_Click(object sender, RoutedEventArgs e)
+            var loadBind = new CommandBinding(ApplicationCommands.Open);
+            var saveBind = new CommandBinding(ApplicationCommands.Save);
+            var updateBind = new CommandBinding(NavigationCommands.Refresh);
+            loadBind.Executed += loadBind_Executed;
+            saveBind.Executed += saveBind_Executed;
+            updateBind.Executed += updateBind_Executed;
+
+            this.CommandBindings.Add(loadBind);
+            this.CommandBindings.Add(saveBind);
+            this.CommandBindings.Add(updateBind);
+        }
+        /// <summary>
+        /// Обновление данных на вкладке БД
+        /// </summary>
+        void updateBind_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = authorChangeService.LoadChanges();
+        }
+        /// <summary>
+        /// Сохранение изменений в БД
+        /// </summary>
+        void saveBind_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            authorChangeService.AddChanges((IEnumerable<AuthorChange>)assemblyGrid.ItemsSource);
+        }
+        /// <summary>
+        /// Загрузка данных со сборки
+        /// </summary>
+        void loadBind_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             var dialog = new System.Windows.Forms.OpenFileDialog();
-            if(dialog.ShowDialog()!=System.Windows.Forms.DialogResult.OK)
+            if (dialog.ShowDialog() != System.Windows.Forms.DialogResult.OK)
             {
                 return;
             }
             var changes = authorChangeService.LoadChanges(dialog.FileName);
             assemblyGrid.ItemsSource = changes;
-        }
-
-        private void buttonAddToDB_Click(object sender, RoutedEventArgs e)
-        {
-            authorChangeService.AddChanges((IEnumerable<AuthorChange>)assemblyGrid.ItemsSource);
-        }
-
-        private void buttonUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            dataGrid.ItemsSource = authorChangeService.LoadChanges();
         }
     }
 }

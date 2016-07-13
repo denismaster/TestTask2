@@ -5,7 +5,7 @@ using System.Text;
 using TestTask.Models;
 namespace TestAssembly
 {
-    [AuthorChange("Ivan Ivanov","2016/01/01")]
+    [AuthorChange("Ivan Ivanov","2016/01/01","Изменение заголовка класса")]
     [AuthorChange("Petr Petrov", "2016/02/01")]
     public class A
     {

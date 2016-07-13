@@ -6,15 +6,36 @@ using System.Reflection;
 
 namespace TestTask.Models
 {
+    /// <summary>
+    /// Сервис для работы с изменениями.
+    /// </summary>
     public class AuthorChangeService
     {
+        /// <summary>
+        /// Репозиторий для работы с изменениями
+        /// </summary>
         private readonly IAuthorChangeRepository authorChangeRepository;
+        /// <summary>
+        /// Анализатор атрибутов
+        /// </summary>
+        private readonly AuthorChangeAnalyzer analyzer;
 
         public AuthorChangeService(IAuthorChangeRepository repository)
         {
-            if (repository == null) throw new ArgumentNullException("repository");
+            if (repository == null)
+            {
+                throw new ArgumentNullException("repository");
+            }
             this.authorChangeRepository = repository;
+
+            //TODO:если способ анализа атрибутов будет меняться, то добавить DI для анализатора
+            analyzer = new AuthorChangeAnalyzer();
         }
+        /// <summary>
+        /// Получение изменений путем анализа файла сборки
+        /// </summary>
+        /// <param name="assemblyPath"></param>
+        /// <returns></returns>
         public IEnumerable<AuthorChange> LoadChanges(string assemblyPath)
         {
             var changes = new List<AuthorChange>();
@@ -26,40 +47,28 @@ namespace TestTask.Models
 
             foreach (var type in types)
             {
-                var typeName = type.Name;
 
-                var methods = type.GetMethods(BindingFlags.Public |
-                    BindingFlags.NonPublic |
-                    BindingFlags.Static |
-                    BindingFlags.DeclaredOnly |
-                    BindingFlags.Instance);
+                changes.AddRange(analyzer.AnalyzeType(type, assemblyName));
 
-                var typeAttributes = Attribute.GetCustomAttributes(type, typeof(AuthorChangeAttribute));
+                changes.AddRange(analyzer.AnalyzeTypeMethods(type, assemblyName));
 
-                foreach (var attribute in typeAttributes.OfType<AuthorChangeAttribute>())
-                {
-                    changes.Add(new AuthorChange(attribute.AuthorName, attribute.Date, attribute.Description, assemblyName, typeName));
-                }
-
-                foreach (var method in methods)
-                {
-                    var methodAttributes = Attribute.GetCustomAttributes(method, typeof(AuthorChangeAttribute));
-                    var methodName = method.Name;
-                    foreach (var attribute in methodAttributes.OfType<AuthorChangeAttribute>())
-                    {
-                        changes.Add(new AuthorChange(attribute.AuthorName, attribute.Date, attribute.Description, assemblyName, typeName + "/" + methodName));
-                    }
-                }
+                
             }
             
             return changes;
         }
-
+        /// <summary>
+        /// Получение изменений из БД
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<AuthorChange> LoadChanges()
         {
             return authorChangeRepository.GetChanges();
         }
-
+        /// <summary>
+        /// Сохранение изменений в БД
+        /// </summary>
+        /// <param name="changes"></param>
         public void AddChanges(IEnumerable<AuthorChange> changes)
         {
             authorChangeRepository.AddChanges(changes);

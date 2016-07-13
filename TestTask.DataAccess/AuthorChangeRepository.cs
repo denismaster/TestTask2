@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using TestTask.Models;
 namespace TestTask.DataAccess
 {
+    /// <summary>
+    /// Репозиторий для работы с БД через EntityFramework.
+    /// </summary>
     public class AuthorChangeRepository:IAuthorChangeRepository
     {
         public AuthorChangeContext context;
@@ -14,12 +17,18 @@ namespace TestTask.DataAccess
         {
             context = new AuthorChangeContext();
         }
-
+        /// <summary>
+        /// Получение изменений из базы данных
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<AuthorChange> GetChanges()
         {
             return context.AuthorChanges.OrderBy(x=>x.Date).ToList();
         }
-
+        /// <summary>
+        /// Сохранение изменений или обновление старых
+        /// </summary>
+        /// <param name="changes"></param>
         public void AddChanges(IEnumerable<AuthorChange> changes)
         {
             foreach (var change in changes)
@@ -27,22 +36,23 @@ namespace TestTask.DataAccess
                 var existingChange = context.AuthorChanges.Find(change.Author, change.Date);
                 if (existingChange != null)
                 {
-                    //entity is already in the context
+                    //Если изменения с нашим ключем уже есть в БД, то обновляем.
                     var attachedEntry = context.Entry(existingChange);
                     attachedEntry.CurrentValues.SetValues(change);
                 }
                 else
                 {
-                    //Since we don't have it in db, this is a simple add.
+                   //Иначе просто добавляем.
                    context.AuthorChanges.Add(change);
                 }
             }
         }
 
-
+        /// <summary>
+        /// Сохранение изменений.
+        /// </summary>
         public void SaveChanges()
         {
-            
             try
             {
                 context.SaveChanges();

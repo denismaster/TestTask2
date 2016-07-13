@@ -14,5 +14,10 @@ namespace TestAssembly2
         {
 
         }
+       [TestTask.Models.AuthorChange("", "20150708")]
+        public void MyMethod2()
+        {
+
+        }
     }
 }

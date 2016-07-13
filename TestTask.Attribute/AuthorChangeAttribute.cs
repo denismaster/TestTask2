@@ -26,10 +26,16 @@ namespace TestTask.Models
         public AuthorChangeAttribute(String authorName, String date, String description = null)
         {
             if (String.IsNullOrEmpty(authorName))
+            {
                 throw new ArgumentException("Author name is invalid or null");
+            }
+            DateTime changeDate;
+            if (!(DateTime.TryParse(date, out changeDate)))
+            {
+                throw new ArgumentException("Change date is in invalid format");
+            }
             this.authorName = authorName;
-            //TODO: проверка даты на корректность
-            this.date = DateTime.Parse(date);
+            this.date = changeDate;
             this.description = description;
         }
         public String AuthorName

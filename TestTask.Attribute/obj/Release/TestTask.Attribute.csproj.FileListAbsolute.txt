@@ -1,0 +1,4 @@
+D:\Repositories\TestTask2\TestTask.Attribute\bin\Release\TestTask.Attribute.dll
+D:\Repositories\TestTask2\TestTask.Attribute\bin\Release\TestTask.Attribute.pdb
+D:\Repositories\TestTask2\TestTask.Attribute\obj\Release\TestTask.Attribute.dll
+D:\Repositories\TestTask2\TestTask.Attribute\obj\Release\TestTask.Attribute.pdb

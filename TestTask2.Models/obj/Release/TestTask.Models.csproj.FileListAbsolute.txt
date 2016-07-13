@@ -1,0 +1,7 @@
+D:\Repositories\TestTask2\TestTask2.Models\bin\Release\TestTask2.Models.dll
+D:\Repositories\TestTask2\TestTask2.Models\bin\Release\TestTask2.Models.pdb
+D:\Repositories\TestTask2\TestTask2.Models\bin\Release\TestTask.Attribute.dll
+D:\Repositories\TestTask2\TestTask2.Models\bin\Release\TestTask.Attribute.pdb
+D:\Repositories\TestTask2\TestTask2.Models\obj\Release\TestTask.Models.csprojResolveAssemblyReference.cache
+D:\Repositories\TestTask2\TestTask2.Models\obj\Release\TestTask2.Models.dll
+D:\Repositories\TestTask2\TestTask2.Models\obj\Release\TestTask2.Models.pdb

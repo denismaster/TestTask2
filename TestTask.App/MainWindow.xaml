@@ -11,11 +11,11 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <ToolBar Grid.Row="0">
-                        <Button x:Name="buttonLoad" Click="buttonLoad_Click">Открыть сборку...</Button>
+                        <Button x:Name="buttonLoad" Command="Open">Открыть сборку...</Button>
                         <Separator></Separator>
-                        <Button x:Name="buttonAddToDB" Click="buttonAddToDB_Click">Сохранить в базе</Button>
+                        <Button x:Name="buttonAddToDB" Command="Save">Сохранить в базе</Button>
                     </ToolBar>
-                    <DataGrid Grid.Row="1" x:Name="assemblyGrid" AutoGenerateColumns="False">
+                    <DataGrid  Grid.Row="1" x:Name="assemblyGrid" AutoGenerateColumns="False" CanUserAddRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Автор" Width="100" 
                              Binding="{Binding Path=Author}"></DataGridTextColumn>
@@ -38,9 +38,9 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <ToolBar Grid.Row="0">
-                        <Button x:Name="buttonUpdate" Click="buttonUpdate_Click">Обновить</Button>
+                        <Button x:Name="buttonUpdate" Command="Refresh">Обновить</Button>
                     </ToolBar>
-                    <DataGrid Grid.Row="1" x:Name="dataGrid" AutoGenerateColumns="False">
+                    <DataGrid Grid.Row="1" x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Автор" Width="100" 
                              Binding="{Binding Path=Author}"></DataGridTextColumn>
