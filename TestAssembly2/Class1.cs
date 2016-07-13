@@ -10,6 +10,7 @@ namespace TestAssembly2
     public class Class1
     {
         [TestTask.Models.AuthorChange("Quiz Quiz", "2013/06/14")]
+        [TestTask.Models.AuthorChange("Quiz Quiz", "2013/06/11")]
         public void MyMethod()
         {
 

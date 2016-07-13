@@ -31,7 +31,7 @@ namespace TestTask.DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<AuthorChange>().HasKey(t => new { t.Author, t.Date });
+            modelBuilder.Entity<AuthorChange>().HasKey(t => new { t.Author, t.Date, t.AssemblyName, t.Location });
         }
         #endregion
     }

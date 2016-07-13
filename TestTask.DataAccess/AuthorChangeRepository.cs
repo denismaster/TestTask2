@@ -33,7 +33,8 @@ namespace TestTask.DataAccess
         {
             foreach (var change in changes)
             {
-                var existingChange = context.AuthorChanges.Find(change.Author, change.Date);
+                var existingChange = context.AuthorChanges.Find(change.Author, 
+                    change.Date, change.AssemblyName, change.Location);
                 if (existingChange != null)
                 {
                     //Если изменения с нашим ключем уже есть в БД, то обновляем.
